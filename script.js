@@ -83,7 +83,6 @@ function setTime() {
   rotate(minuteEl);
   rotate(hourEl);
 
-
   timeEl.innerHTML = `${hoursForClock}:${
     minutes < 10 ? `0${minutes}` : minutes
   } ${ampm}`;
