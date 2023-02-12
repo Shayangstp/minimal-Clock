@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Lexend+Exa&family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #ffffff;
+}
+
+html {
+  transition: all 0.5s ease;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.toggle:focus {
+  outline: 0;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background-color: #e74c3c;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+}
+.center-point::after {
+  content: "";
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+}
+
+.time {
+  font-size: 50px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
+}
+
+.mode-container {
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  background: #5c5959;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.mode-container .mode-text {
+  position: absolute;
+  top: -26px;
+  left: 10px;
+  width: 317px;
+  height: 74px;
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  color: #8a8383;
+}
+
+.dark-mode {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 49px;
+  height: 22px;
+  cursor: pointer;
+  background: #8a8383;
+  border-radius: 15px;
+}
+
+.dark-mode .toggle {
+  position: absolute;
+  top: 1px;
+  right: 27px;
+  width: 21px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  background: var(--secondary-color);
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-toggle {
+  transform: translateX(27px);
+}
+
+.dark-mode .moon {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  top: 2px;
+}
+
+.dark-mode .sun {
+  position: absolute;
+  color: #000000;
+  left: 5px;
+  top: 3px;
+}
