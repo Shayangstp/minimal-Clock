@@ -9,9 +9,6 @@ const modeText = document.querySelector(".mode-text");
 
 btnDarkMode.addEventListener("click", () => {
   toggle.classList.toggle("btn-toggle");
-
-  const icon = document.querySelector(".icon");
-  icon.classList.add("fa-sharp fa-solid fa-sun");
 });
 
 const days = [
@@ -82,6 +79,11 @@ function setTime() {
     360
   )}deg)`;
 
+  rotate(secondEl);
+  rotate(minuteEl);
+  rotate(hourEl);
+
+
   timeEl.innerHTML = `${hoursForClock}:${
     minutes < 10 ? `0${minutes}` : minutes
   } ${ampm}`;
@@ -90,6 +92,14 @@ function setTime() {
 
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+};
+
+const rotate = (needle) => {
+  if (needle.style.transform == `translate(-50%, -100%) rotate(${0}deg)`) {
+    needle.classList.add("transition");
+  } else {
+    needle.classList.remove("transition");
+  }
 };
 
 setTime();

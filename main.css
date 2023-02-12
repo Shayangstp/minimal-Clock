@@ -76,6 +76,10 @@ body {
   background-color: #e74c3c;
 }
 
+.transition {
+  transition: none;
+}
+
 .center-point {
   background-color: #e74c3c;
   width: 10px;
